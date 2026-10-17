@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HARMONY | Cantata Celebration</title>
+<style>
+:root{--navy:#081426;--navy2:#102541;--gold:#f2c66d;--cream:#fff8e9;--muted:#c4d0df;--card:#122944}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--cream);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:rgba(8,20,38,.94);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff18}
+.nav{max-width:1150px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brand{font-weight:900;letter-spacing:3px;color:var(--gold);font-size:1.15rem}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.9rem;color:var(--muted)}
+nav a:hover{color:var(--gold)}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:80px 22px;background:linear-gradient(180deg,#07122299,#071222f2),radial-gradient(ellipse at 50% 20%,#5c4a2a 0%,#142a48 36%,#081426 75%)}
+.hero-inner{max-width:850px}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:4px;font-size:.78rem;font-weight:bold}
+h1{font-family:Georgia,serif;font-size:clamp(3rem,9vw,6.8rem);line-height:.98;margin:20px 0;color:#fff5dc}
+h1 span{color:var(--gold);font-style:italic}
+.hero p{font-size:1.15rem;max-width:680px;margin:24px auto;color:var(--muted)}
+.btn{display:inline-block;border:0;border-radius:999px;background:var(--gold);color:#172033;padding:13px 23px;text-decoration:none;font-weight:bold;margin:8px 5px;cursor:pointer}
+.btn.secondary{background:transparent;color:var(--cream);border:1px solid #ffffff60}
+.event-strip{max-width:1000px;margin:-30px auto 0;position:relative;background:var(--cream);color:#13233a;display:grid;grid-template-columns:repeat(3,1fr);border-radius:18px;box-shadow:0 20px 55px #0005;overflow:hidden}
+.event-strip div{text-align:center;padding:24px 12px;border-right:1px solid #d8d4ca}
+.event-strip div:last-child{border:0}.event-strip strong{display:block;color:#9c6a12;text-transform:uppercase;font-size:.75rem;letter-spacing:2px}.event-strip span{font-weight:bold}
+section{padding:86px 22px}
+.container{max-width:1050px;margin:auto}
+.section-label{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:.76rem;font-weight:bold}
+h2{font-family:Georgia,serif;font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.1;margin:12px 0 22px}
+.lead{color:var(--muted);max-width:720px;font-size:1.08rem}
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}
+.note-card{background:linear-gradient(145deg,#183453,#0e2038);border:1px solid #ffffff18;border-radius:22px;padding:30px}
+.note-card .big-note{font-size:5rem;color:var(--gold);line-height:1}
+.pill{display:inline-block;border:1px solid #dcb75b70;border-radius:99px;color:var(--gold);padding:5px 12px;font-size:.8rem;margin:4px}
+.programme{display:grid;gap:12px;margin-top:30px}
+.programme-item{display:grid;grid-template-columns:100px 1fr;gap:20px;background:var(--card);border:1px solid #ffffff12;padding:20px;border-radius:14px}
+.programme-item time{color:var(--gold);font-weight:bold}
+.programme-item h3{margin:0 0 4px}.programme-item p{margin:0;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.gallery-card{min-height:210px;border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:linear-gradient(160deg,#c28d3b,#203b5b 65%,#091629);border:1px solid #ffffff20}
+.gallery-card:nth-child(2){background:linear-gradient(160deg,#4f6f8c,#172d49 60%,#091629)}
+.gallery-card:nth-child(3){background:linear-gradient(160deg,#6b557d,#26314f 60%,#091629)}
+.gallery-card .icon{font-size:2.6rem}.gallery-card p{color:#e2e7ef;margin:0}
+.media-box{background:#0e2037;border:1px solid #ffffff20;border-radius:18px;padding:24px;margin-top:18px}
+.media-box a{color:var(--gold)}
+.xr-box{background:linear-gradient(135deg,#182f4e,#0b192d);border:1px solid #f2c66d55;border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;margin-top:25px}
+.stage{height:240px;position:relative;overflow:hidden;border-radius:16px;background:radial-gradient(ellipse at 50% 100%,#f2c66d 0,#a66c36 8%,#1a3556 45%,#071222 100%)}
+.stage:before{content:"";position:absolute;left:12%;right:12%;bottom:25px;height:80px;background:linear-gradient(90deg,#d5a451,#f8df9b,#b47b31);clip-path:polygon(0 100%,10% 25%,90% 25%,100% 100%)}
+.stage:after{content:"♫  ♬  ♪  ♫";position:absolute;top:38px;left:0;right:0;text-align:center;color:#ffe6a4;font-size:2.2rem;letter-spacing:10px}
+.stage-lights{position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,#f2c66d22 35%,transparent 50%,#80b7ff20 70%,transparent 85%)}
+footer{border-top:1px solid #ffffff20;text-align:center;padding:35px 20px;color:var(--muted);font-size:.9rem}
+footer strong{color:var(--gold)}
+.small{font-size:.88rem;color:var(--muted)}
+@media(max-width:760px){.event-strip{margin:0 14px;grid-template-columns:1fr}.event-strip div{border-right:0;border-bottom:1px solid #d8d4ca}.two-col,.xr-box{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.hero{min-height:70vh}nav{gap:10px}nav a{font-size:.8rem}.programme-item{grid-template-columns:78px 1fr}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand">✦ HARMONY</div><nav>
+<a href="#home">Home</a><a href="#about">About</a><a href="#programme">Programme</a><a href="#gallery">Media Gallery</a><a href="#contact">Contact</a>
+</nav></div></header>
+<main>
+<section class="hero" id="home"><div class="hero-inner">
+<div class="eyebrow">Harmony Academy presents</div>
+<h1>One Stage.<br><span>A Thousand Voices.</span></h1>
+<p>Join us for an unforgettable celebration of music, creativity and talent at our annual Cantata Celebration — where every voice becomes part of something beautiful.</p>
+<a class="btn" href="#programme">Explore the Programme ↓</a><a class="btn secondary" href="#about">Discover the Cantata</a>
+</div></section>
+<div class="event-strip">
+<div><strong>Date</strong><span>Saturday, 21 November 2026</span></div>
+<div><strong>Time</strong><span>3:00 PM – 6:00 PM</span></div>
+<div><strong>Venue</strong><span>Harmony Academy Main Hall</span></div>
+</div>
+<section id="about"><div class="container two-col">
+<div><div class="section-label">About the Cantata</div><h2>Many voices.<br>One harmony.</h2>
+<p class="lead">The Harmony Academy Cantata Celebration brings our school community together through the power of music. Learners, teachers and special guests will share songs and performances that celebrate unity, hope and the creativity within us all.</p>
+<p>Our theme, <strong>“A Symphony of Voices”</strong>, reminds us that every person has something valuable to contribute. From powerful choir arrangements to thoughtful solo performances, the afternoon promises inspiration, joy and school spirit.</p>
+<span class="pill">Music</span><span class="pill">Creativity</span><span class="pill">Community</span><span class="pill">Talent</span>
+</div><div class="note-card"><div class="big-note">♫</div><h3>A celebration for everyone</h3><p class="small">Families, friends and invited guests are warmly welcome. Come support our performers and experience the magic created when a community sings together.</p><hr style="border-color:#ffffff20"><p><strong style="color:var(--gold)">Dress code:</strong> Smart casual</p><p><strong style="color:var(--gold)">Admission:</strong> Free with school invitation</p></div>
+</div></section>
+<section id="programme" style="background:#0b1a2e"><div class="container"><div class="section-label">Event schedule</div><h2>The Programme</h2><p class="lead">Here is a preview of the afternoon. Times and performances are fictional examples for this school project.</p>
+<div class="programme">
+<div class="programme-item"><time>3:00 PM</time><div><h3>Welcome & Opening</h3><p>Opening remarks from the school leadership and a welcome to our guests.</p></div></div>
+<div class="programme-item"><time>3:15 PM</time><div><h3>Voices in Harmony</h3><p>The school choir opens the celebration with a joyful group performance.</p></div></div>
+<div class="programme-item"><time>3:45 PM</time><div><h3>Solo Spotlight</h3><p>Student soloists share their musical gifts and favourite pieces.</p></div></div>
+<div class="programme-item"><time>4:15 PM</time><div><h3>Instrumental Interlude</h3><p>A selection of instrumental performances from our young musicians.</p></div></div>
+<div class="programme-item"><time>4:45 PM</time><div><h3>Special Guest Performance</h3><p>A surprise musical moment to celebrate talent across our community.</p></div></div>
+<div class="programme-item"><time>5:30 PM</time><div><h3>Grand Finale & Closing</h3><p>All performers join together for a memorable closing song and thank-you.</p></div></div>
+</div></div></section>
+<section id="gallery"><div class="container"><div class="section-label">Moments in music</div><h2>Media Gallery</h2><p class="lead">A glimpse of the atmosphere we hope to create: expressive performances, teamwork and a stage filled with light.</p>
+<div class="gallery">
+<div class="gallery-card"><div class="icon">🎤</div><h3>The Power of Voices</h3><p>Choir performances bring every voice together.</p></div>
+<div class="gallery-card"><div class="icon">🎹</div><h3>Music in Motion</h3><p>Instrumental moments and student creativity.</p></div>
+<div class="gallery-card"><div class="icon">✨</div><h3>Under the Lights</h3><p>A stage designed for a memorable celebration.</p></div>
+</div>
+<div class="media-box"><h3>🔊 Audio Invitation</h3><p>Press the button to hear a spoken invitation. Your browser's speech feature will read the announcement aloud.</p><button class="btn" onclick="speakInvite()">▶ Play Cantata Announcement</button><button class="btn secondary" onclick="stopInvite()">■ Stop</button><p class="small" id="audio-status" aria-live="polite">Audio announcement ready.</p></div>
+<div class="media-box"><h3>🎬 Promotional Video</h3><p>Watch choir and concert footage for inspiration. This link opens a YouTube search for school choir concert videos.</p><a class="btn" href="https://www.youtube.com/results?search_query=school+choir+concert+performance" target="_blank" rel="noopener">Open Video Gallery on YouTube ↗</a><p class="small">For submission, replace this with a specific video your teacher approves, or upload your own promotional video.</p></div>
+</div></section>
+<section id="xr" style="background:#0b1a2e"><div class="container"><div class="section-label">Innovation corner</div><h2>Experience the stage differently</h2><p class="lead">Our Extended Reality (XR) concept imagines how technology could help guests explore the cantata before arriving.</p>
+<div class="xr-box"><div class="stage" aria-label="Illustration of a concert stage"><div class="stage-lights"></div></div><div><span class="pill">XR CONCEPT</span><h3>Virtual Stage Tour</h3><p>Imagine tapping the stage illustration to explore a 3D version of the venue, view the choir from different angles and discover where performers and instruments will be positioned.</p><p>This virtual tour could help visitors become familiar with the venue before the event, build excitement and make the celebration more accessible to people who cannot attend in person.</p><p class="small"><strong>Note:</strong> This is a visual mock-up of a proposed XR feature, not a functioning 3D environment.</p></div></div>
+</div></section>
+<section id="contact"><div class="container two-col"><div><div class="section-label">Get in touch</div><h2>We'd love to see you there.</h2><p class="lead">For event questions, invitations or accessibility requests, contact the Creative Media Team through the school office.</p><p><strong>School:</strong> Harmony Academy (fictional project school)</p><p><strong>Office hours:</strong> Monday–Friday, 8:00 AM–4:00 PM</p><p><strong>Email:</strong> <a href="mailto:nate67@gmail.com">nate67@gmail.com</a></p></div>
+<div class="note-card"><h3>Before you arrive</h3><p>✓ Please arrive 15 minutes early.</p><p>✓ Keep phones on silent during performances.</p><p>✓ Support every performer with warm applause.</p><p>✓ Ask permission before taking or sharing photos of learners.</p><a class="btn" href="#home">Back to top ↑</a></div></div></section>
+</main>
+<footer><strong>HARMONY · CANTATA CELEBRATION 2026</strong><br>One Stage. A Thousand Voices.<br><span class="small">School project demonstration · Fictional event details · Update details before public use</span></footer>
+<script>
+function speakInvite(){
+ if(!('speechSynthesis' in window)){document.getElementById('audio-status').textContent='Speech playback is not supported in this browser.';return;}
+ speechSynthesis.cancel();
+ const msg=new SpeechSynthesisUtterance('You are warmly invited to the Harmony Academy Cantata Celebration, on Saturday the twenty-first of November, twenty twenty-six, from three to six in the afternoon, at the Harmony Academy Main Hall. Join us for an unforgettable celebration of music, creativity and talent. One stage, a thousand voices. We look forward to welcoming you.');
+ msg.rate=0.92;msg.pitch=1;msg.onstart=()=>document.getElementById('audio-status').textContent='Playing the cantata announcement…';msg.onend=()=>document.getElementById('audio-status').textContent='Announcement finished.';speechSynthesis.speak(msg);
+}
+function stopInvite(){if('speechSynthesis' in window)speechSynthesis.cancel();document.getElementById('audio-status').textContent='Announcement stopped.';}
+</script>
+</body></html>
